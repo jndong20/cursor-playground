@@ -1,0 +1,2 @@
+# cursor-playground
+cursor-playground
