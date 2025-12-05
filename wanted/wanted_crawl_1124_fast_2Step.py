@@ -36,6 +36,7 @@ df_detail = pd.read_excel(list_save_path, engine='openpyxl')
 detail_info_list = []
 
 # 테스트를 위해 처음 10개만 처리
+print(f"처음 10개 공고의 상세 정보 수집 시작...")
 for idx, row in df_detail.head(10).iterrows():
     try:
         href = row['link']
