@@ -23,9 +23,10 @@ url = "https://www.wanted.co.kr/search?query=unreal&tab=position"
 url = "https://www.wanted.co.kr/wdlist"
 
 #url = "https://www.wanted.co.kr/wdlist/518/10531"   #3건
-#url = "https://www.wanted.co.kr/wdlist/518/10536"   #7건  테크니털 라이터터
-#url = "https://www.wanted.co.kr/wdlist/518/10110"  #소프트웨어 개발자 900간
-url = "https://www.wanted.co.kr/wdlist/518/899"   #파이썬 개발자자  400건
+#url = "https://www.wanted.co.kr/wdlist/518/10536"   #7건  테크니털 라이터
+#url = "https://www.wanted.co.kr/wdlist/518/10110"  #소프트웨어 개발자 900건
+url = "https://www.wanted.co.kr/wdlist/518/899"   #파이썬 개발자자  407건
+
 
 
 driver.get(url)

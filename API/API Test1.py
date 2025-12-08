@@ -1,5 +1,4 @@
 # OpenAI API 테스트: 텍스트 생성 & 이미지 생성
-# API 키는 config.env 파일에 저장되어 있습니다
 
 from openai import OpenAI
 import os
