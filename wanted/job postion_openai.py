@@ -1,8 +1,11 @@
 import pandas as pd
 from openai import OpenAI
+
 client = OpenAI()
 
-df = pd.read_excel("jobs.xlsx")
+# 읽어올 엑셀 파일명 (지정된 파일명 사용)
+input_file = "wanted_final_20251205_172607.xlsx"
+df = pd.read_excel(input_file, engine='openpyxl')
 
 AI_KEYWORDS = [
     "AI", "인공지능", "머신러닝", "machine learning", "딥러닝", "deep learning",
@@ -38,12 +41,14 @@ AI 관련이란, AI/ML/딥러닝/LLM/비전 AI/AI Agent가 주요 업무인 포�
 
 results = []
 for _, row in df.iterrows():
+    # 텍스트 합치기 (기본 wanted 엑셀 컬럼 구조에 맞춤)
     text = " ".join([
         str(row.get("position_name", "")),
         str(row.get("position", "")),
-        str(row.get("주요업무", "")),
-        str(row.get("자격요건", "")),
-        str(row.get("우대사항", "")),
+        str(row.get("content1", "")),
+        str(row.get("content2", "")),
+        str(row.get("content3", "")),
+        str(row.get("content4", ""))
     ])
     if has_ai_keyword(text):
         ai_flag = classify_with_gpt(text)
@@ -52,4 +57,5 @@ for _, row in df.iterrows():
     results.append(ai_flag)
 
 df["AI_관련여부"] = results
-df.to_excel("jobs_with_ai_flag.xlsx", index=False)
+output_file = "jobs_with_ai_flag.xlsx"
+df.to_excel(output_file, index=False)

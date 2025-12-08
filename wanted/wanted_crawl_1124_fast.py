@@ -133,7 +133,8 @@ print(f"총 수집된 공고 개수: {len(elements)}")
 # 1단계: 리스트 페이지에서 모든 공고의 기본 정보 수집
 # 테스트를 위해 3개만 처리
 list_data = []
-for idx, e in enumerate(elements[:20]):
+#for idx, e in enumerate(elements[:20]):
+for idx, e in enumerate(elements):
     try:
         # Stale Element Reference 방지를 위해 요소를 찾은 직후 모든 속성 추출
         # 재시도 로직 추가

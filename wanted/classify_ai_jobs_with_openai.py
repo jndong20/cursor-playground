@@ -36,7 +36,7 @@ print("OpenAI API를 사용한 AI 공고 분류 및 요약")
 print("=" * 70)
 
 # 엑셀 파일 경로
-input_file = "wanted_final_20251205_172607.xlsx"
+input_file = "wanted_final_20251208_093951.xlsx"
 
 print(f"\n파일 읽기: {input_file}")
 df = pd.read_excel(input_file, engine='openpyxl')
