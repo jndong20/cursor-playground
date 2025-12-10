@@ -43,7 +43,7 @@ print("=" * 70)
 MAX_WORKERS = 5  # 병렬 처리 워커 수 (OpenAI Rate limit 고려)
 
 # 엑셀 파일 경로
-input_file = "2.소프트웨어 엔지니어_wanted_20251208_172702.xlsx"
+input_file = "[게임] wanted_all_jobs_20251210_145418.xlsx"
 
 print(f"\n파일 읽기: {input_file}")
 df = pd.read_excel(input_file, engine='openpyxl')
@@ -145,7 +145,7 @@ AI 관련 키워드: AI, 인공지능, 머신러닝, Machine Learning, 딥러닝
             if attempt < retry - 1:
                 time.sleep(2)
             else:
-                result['reason'] = f'분석 실패: {str(e)[:50]}'
+                result['reason'] = f'분석 실패: {str(e)[:250]}'
     
     # 진행 상황 업데이트
     with progress_lock:
