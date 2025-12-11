@@ -43,7 +43,7 @@ print("=" * 70)
 MAX_WORKERS = 5  # 병렬 처리 워커 수 (OpenAI Rate limit 고려)
 
 # 엑셀 파일 경로
-input_file = "[게임] wanted_all_jobs_20251210_145418.xlsx"
+input_file = "[제조생산] wanted_all_jobs_20251210_145929.xlsx"
 
 print(f"\n파일 읽기: {input_file}")
 df = pd.read_excel(input_file, engine='openpyxl')

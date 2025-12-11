@@ -20,78 +20,8 @@ warnings.filterwarnings('ignore')
 # ============================================
 # 설정
 # ============================================
-# 크롤링할 직무 카테고리 목록 (직무명, URL)
-JOB_CATEGORIES = [
-    # 개발발 카테고리
-
-    # ('소프트웨어 엔지니어', 'https://www.wanted.co.kr/wdlist/518/10110'),
-    # ('서버 개발자', 'https://www.wanted.co.kr/wdlist/518/872'),
-    # ('웹 개발자', 'https://www.wanted.co.kr/wdlist/518/873'),
-    # ('프론트엔드 개발자', 'https://www.wanted.co.kr/wdlist/518/669'),
-    # ('자바 개발자', 'https://www.wanted.co.kr/wdlist/518/660'),
-    # ('파이썬 개발자', 'https://www.wanted.co.kr/wdlist/518/899'),
-    # ('머신러닝 엔지니어', 'https://www.wanted.co.kr/wdlist/518/1634'),
-    # ('C,C++ 개발자', 'https://www.wanted.co.kr/wdlist/518/900'),
-    # ('DevOps / 시스템 관리자', 'https://www.wanted.co.kr/wdlist/518/674'),
-    # ('시스템,네트워크 관리자', 'https://www.wanted.co.kr/wdlist/518/665'),
-    # ('데이터 엔지니어', 'https://www.wanted.co.kr/wdlist/518/655'),
-    # ('Node.js 개발자', 'https://www.wanted.co.kr/wdlist/518/895'),
-    # ('개발 매니저', 'https://www.wanted.co.kr/wdlist/518/877'),
-    # ('임베디드 개발자', 'https://www.wanted.co.kr/wdlist/518/658'),
-    # ('QA,테스트 엔지니어', 'https://www.wanted.co.kr/wdlist/518/676'),
-    # ('데이터 사이언티스트', 'https://www.wanted.co.kr/wdlist/518/1024'),
-    # ('빅데이터 엔지니어', 'https://www.wanted.co.kr/wdlist/518/1025'),
-    # ('안드로이드 개발자', 'https://www.wanted.co.kr/wdlist/518/677'),
-    # ('iOS 개발자', 'https://www.wanted.co.kr/wdlist/518/678'),
-    # ('기술지원', 'https://www.wanted.co.kr/wdlist/518/1026'),
-    # ('하드웨어 엔지니어', 'https://www.wanted.co.kr/wdlist/518/672'),
-    # ('크로스플랫폼 앱 개발자', 'https://www.wanted.co.kr/wdlist/518/10111'),
-    # ('프로덕트 매니저', 'https://www.wanted.co.kr/wdlist/518/876'),
-    # ('블록체인 플랫폼 엔지니어', 'https://www.wanted.co.kr/wdlist/518/1027'),
-    # ('DBA', 'https://www.wanted.co.kr/wdlist/518/10231'),
-    # ('웹 퍼블리셔', 'https://www.wanted.co.kr/wdlist/518/939'),
-    # ('영상,음성 엔지니어', 'https://www.wanted.co.kr/wdlist/518/896'),
-    # ('PHP 개발자', 'https://www.wanted.co.kr/wdlist/518/893'),
-    # ('.NET 개발자', 'https://www.wanted.co.kr/wdlist/518/661'),
-    # ('CTO,Chief Technology Officer', 'https://www.wanted.co.kr/wdlist/518/795'),
-    # ('그래픽스 엔지니어', 'https://www.wanted.co.kr/wdlist/518/898'),
-    # ('ERP전문가', 'https://www.wanted.co.kr/wdlist/518/10230'),
-    # ('BI 엔지니어', 'https://www.wanted.co.kr/wdlist/518/1022'),
-    # ('VR 엔지니어', 'https://www.wanted.co.kr/wdlist/518/10112'),
-    # ('루비온레일즈 개발자', 'https://www.wanted.co.kr/wdlist/518/894'),
-    # ('테크니컬 라이터', 'https://www.wanted.co.kr/wdlist/518/10536'),
-    # ('CIO,Chief Information Officer', 'https://www.wanted.co.kr/wdlist/518/793'),
-    # ('RPA 엔지니어', 'https://www.wanted.co.kr/wdlist/518/10531'),
-
-   # 게임 카테고리 추가,   enumerate(list_data) 변경
-     #('게임 기획자', 'https://www.wanted.co.kr/wdlist/959/892'),
-     #('게임 그래픽 디자이너', 'https://www.wanted.co.kr/wdlist/959/880'),
-     #('게임 클라이언트 개발자', 'https://www.wanted.co.kr/wdlist/959/961'),
-     #('게임 아티스트', 'https://www.wanted.co.kr/wdlist/959/881'),
-     #('게임 서버 개발자', 'https://www.wanted.co.kr/wdlist/959/960'),
-     #('모바일 게임 개발자', 'https://www.wanted.co.kr/wdlist/959/962'),
-     #('언리얼 개발자', 'https://www.wanted.co.kr/wdlist/959/897'),
-     #('유니티 개발자', 'https://www.wanted.co.kr/wdlist/959/878'),
-     #('게임운영자(GM)', 'https://www.wanted.co.kr/wdlist/959/958'),
-
-    # 제조·생산
-    ('품질 관리자', 'https://www.wanted.co.kr/wdlist/522/704'),
-    ('생산 관리자', 'https://www.wanted.co.kr/wdlist/522/701'),
-    ('자재관리·구매', 'https://www.wanted.co.kr/wdlist/522/699'),
-    ('기계·설비·설계', 'https://www.wanted.co.kr/wdlist/522/700'),
-    ('섬유·의류·패션', 'https://www.wanted.co.kr/wdlist/522/10113'),
-    ('공정 관리자', 'https://www.wanted.co.kr/wdlist/522/703'),
-    ('제조 엔지니어', 'https://www.wanted.co.kr/wdlist/522/698'),
-    ('생산직 종사자', 'https://www.wanted.co.kr/wdlist/522/702'),
-    ('반도체·디스플레이', 'https://www.wanted.co.kr/wdlist/522/10114'),
-    ('안전 관리자', 'https://www.wanted.co.kr/wdlist/522/705'),
-    ('화학자', 'https://www.wanted.co.kr/wdlist/522/696'),
-    ('기계제작 기술자', 'https://www.wanted.co.kr/wdlist/522/697'),
-    ('조립 기술자', 'https://www.wanted.co.kr/wdlist/522/695'),
-    ('제조 테스트 엔지니어', 'https://www.wanted.co.kr/wdlist/522/706'),
-
-    
-]
+# 크롤링할 직무 카테고리 목록 (별도 파일에서 import)
+from job_categories import JOB_CATEGORIES
 
 MAX_WORKERS = 10  # 병렬 처리 워커 수
 

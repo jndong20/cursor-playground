@@ -45,7 +45,7 @@ print("원티드 기업 정보 크롤링 (병렬 처리) 🚀🚀🚀")
 print("=" * 70)
 
 # 엑셀 파일 경로
-input_file = "3_wanted_classified_openai_20251209_144723.xlsx"
+input_file = "개발_comapny_id.xlsx"
 
 print(f"\n파일 읽기: {input_file}")
 df = pd.read_excel(input_file, engine='openpyxl')
